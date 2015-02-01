@@ -5,6 +5,6 @@
 int main()
 {
 	test();
-	std::cout << "テストを終了しました、プログラムを終了するにはエンターを押してください テストコード：" << TEST_CODE << std::endl;
+	std::cout << "プログラムを終了するにはEnterを押してください" << std::endl << "テストコード：" << TEST_CODE << std::endl;
 	std::cin.get();
 }

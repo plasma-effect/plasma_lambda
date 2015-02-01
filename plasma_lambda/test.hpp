@@ -3,7 +3,7 @@
 #ifdef TEST_CODE
 #undef TEST_CODE
 #endif
-#define TEST_CODE 2
+#define TEST_CODE 3
 
 void test();
 using namespace plasma::lambda;

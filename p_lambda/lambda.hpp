@@ -6,3 +6,4 @@
 
 #include<p_lambda/utility.hpp>
 #include<p_lambda/projection.hpp>
+#include<p_lambda/binary_operators.hpp>

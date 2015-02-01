@@ -33,6 +33,9 @@
     <ClInclude Include="..\p_lambda\projection.hpp">
       <Filter>ヘッダー ファイル\lambda</Filter>
     </ClInclude>
+    <ClInclude Include="..\p_lambda\binary_operators.hpp">
+      <Filter>ヘッダー ファイル\lambda</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,6 +45,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="test2.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test3.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

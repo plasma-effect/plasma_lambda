@@ -83,8 +83,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="test1.cpp" />
     <ClCompile Include="test2.cpp" />
+    <ClCompile Include="test3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\p_lambda\binary_operators.hpp" />
     <ClInclude Include="..\p_lambda\lambda.hpp" />
     <ClInclude Include="..\p_lambda\projection.hpp" />
     <ClInclude Include="..\p_lambda\utility.hpp" />

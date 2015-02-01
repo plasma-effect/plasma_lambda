@@ -29,9 +29,9 @@ namespace plasma
 		template<index_t I>struct projection_t
 		{
 			template<class... Ts>PLASMA_LAMBDA_CONFIG_CONSTEXPR auto operator()(Ts&&... args)->
-				decltype(detail::projection_t::project_i<class_tuple_first_t<class_tuple<Ts...>,I-1>>::run(std::forward<Ts>(args)...))
+				decltype(detail::projection_t::project_i<class_tuple_first_t<class_tuple<Ts...>,I>>::run(std::forward<Ts>(args)...))
 			{
-				return detail::projection_t::project_i<class_tuple_first_t<class_tuple<Ts...>, I - 1>>::run(std::forward<Ts>(args)...);
+				return detail::projection_t::project_i<class_tuple_first_t<class_tuple<Ts...>, I>>::run(std::forward<Ts>(args)...);
 			}
 		};
 
