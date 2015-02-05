@@ -1,4 +1,4 @@
-//Copyright plasma-effect 2014.
+//Copyright plasma-effect 2015.
 //Distributed under the Boost Software License, Version 1.0.
 //(See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -15,11 +15,13 @@ namespace plasma
 		{\
 			Lhs lhs_;\
 			Rhs rhs_;\
-			name(Lhs const& lhs,Rhs const& rhs):lhs_(lhs),rhs_(rhs){}\
-			template<class... Ts>auto operator()(Ts&&... args)->decltype(lhs_(std::forward<Ts>(args)...) op rhs_(std::forward<Ts>(args)...))\
-				{\
+			PLASMA_LAMBDA_CONFIG_CONSTEXPR name(Lhs const& lhs,Rhs const& rhs)\
+				:lhs_(lhs),rhs_(rhs){}\
+			template<class... Ts>PLASMA_LAMBDA_CONFIG_CONSTEXPR auto operator()(Ts&&... args)\
+				->decltype(lhs_(std::forward<Ts>(args)...) op rhs_(std::forward<Ts>(args)...))\
+			{\
 				return lhs_(std::forward<Ts>(args)...) op rhs_(std::forward<Ts>(args)...);\
-				}\
+			}\
 		};\
 		template<class Lhs,class Rhs>PLASMA_LAMBDA_CONFIG_CONSTEXPR name <Lhs,Rhs> operator op (Lhs const& lhs,Rhs const& rhs)\
 		{\
@@ -42,6 +44,9 @@ namespace plasma
 		PLASMA_LAMBDA_BINARY_OPERATORS(<= , binary_operator_less_equal_t);
 		PLASMA_LAMBDA_BINARY_OPERATORS(>= , binary_operator_more_equal_t);
 
-
+		PLASMA_LAMBDA_BINARY_OPERATORS(| , binary_operator_bit_or_t);
+		PLASMA_LAMBDA_BINARY_OPERATORS(&, binary_operator_bit_and_t);
+		PLASMA_LAMBDA_BINARY_OPERATORS(|| , binary_operator_logic_or_t);
+		PLASMA_LAMBDA_BINARY_OPERATORS(&&, binary_operator_logic_and_t);
 	}
 }

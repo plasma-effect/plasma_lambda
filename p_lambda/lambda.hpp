@@ -7,3 +7,6 @@
 #include<p_lambda/utility.hpp>
 #include<p_lambda/projection.hpp>
 #include<p_lambda/binary_operators.hpp>
+#include<p_lambda/monadic_operators.hpp>
+#include<p_lambda/if.hpp>
+#include<p_lambda/constant.hpp>

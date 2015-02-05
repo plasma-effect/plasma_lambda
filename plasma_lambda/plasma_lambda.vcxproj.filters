@@ -16,9 +16,6 @@
     <Filter Include="ヘッダー ファイル\lambda">
       <UniqueIdentifier>{5c362ad4-ec56-49f5-8766-4963527b31e5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー ファイル\phoenix">
-      <UniqueIdentifier>{0523a523-d50b-4b36-8e9a-1b10115ced05}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test.hpp">
@@ -36,6 +33,15 @@
     <ClInclude Include="..\p_lambda\binary_operators.hpp">
       <Filter>ヘッダー ファイル\lambda</Filter>
     </ClInclude>
+    <ClInclude Include="..\p_lambda\monadic_operators.hpp">
+      <Filter>ヘッダー ファイル\lambda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\p_lambda\if.hpp">
+      <Filter>ヘッダー ファイル\lambda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\p_lambda\constant.hpp">
+      <Filter>ヘッダー ファイル\lambda</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,6 +54,15 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="test3.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test4.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test5.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test6.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

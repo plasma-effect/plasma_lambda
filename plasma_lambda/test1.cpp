@@ -4,6 +4,7 @@
 #include<typeinfo>
 #include<iostream>
 
+using namespace plasma::lambda;
 template<class>struct test_sum;
 template<index_t I, index_t... Is>struct test_sum < index_tuple<I, Is...> >
 {

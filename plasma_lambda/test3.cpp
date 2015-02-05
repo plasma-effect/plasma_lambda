@@ -1,8 +1,8 @@
 #include"test.hpp"
 
-#include<iostream>
-
 #if TEST_CODE==3
+
+#include<iostream>
 
 template<class Func>void test_func(Func func)
 {
@@ -11,6 +11,7 @@ template<class Func>void test_func(Func func)
 
 void test()
 {
+	using namespace plasma::lambda;
 	test_func(_<0>() + _<1>());
 	test_func(_<0>() - _<1>());
 	test_func(_<0>() * _<1>());
@@ -27,6 +28,10 @@ void test()
 	test_func(_<0>() <= _<1>());
 	test_func(_<0>() >= _<1>());
 
+	test_func(_<0>() | _<1>());
+	test_func(_<0>()&_<1>());
+	test_func(_<0>() || _<1>());
+	test_func(_<0>() && _<1>());
 }
 
 
