@@ -19,19 +19,20 @@ namespace plasma
 				template<class ClassTuple>struct project_i;
 				template<class... Ts>struct project_i < class_tuple<Ts...> >
 				{
-					template<class T>static PLASMA_LAMBDA_CONFIG_CONSTEXPR auto run(Ts&&..., T&& arg, ...)->decltype(std::forward<T>(arg))
+					template<class T>static PLASMA_LAMBDA_CONFIG_CONSTEXPR T const& run(
+						Ts const&..., T const& arg, ...)
 					{
-						return std::forward<T>(arg);
+						return arg;
 					}
 				};
 			}
 		}
 		template<index_t I>struct projection_t
 		{
-			template<class... Ts>PLASMA_LAMBDA_CONFIG_CONSTEXPR auto operator()(Ts&&... args)->
-				decltype(detail::projection_t::project_i<class_tuple_first_t<class_tuple<Ts...>,I>>::run(std::forward<Ts>(args)...))
+			template<class... Ts>PLASMA_LAMBDA_CONFIG_CONSTEXPR auto operator()(Ts const&... args)->
+				decltype(detail::projection_t::project_i<class_tuple_first_t<class_tuple<Ts...>,I>>::run(args...))
 			{
-				return detail::projection_t::project_i<class_tuple_first_t<class_tuple<Ts...>, I>>::run(std::forward<Ts>(args)...);
+				return detail::projection_t::project_i<class_tuple_first_t<class_tuple<Ts...>, I>>::run(args...);
 			}
 		};
 

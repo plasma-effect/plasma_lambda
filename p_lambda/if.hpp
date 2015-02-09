@@ -48,12 +48,12 @@ namespace plasma
 			Cond cond_;
 			True true_;
 			False false_;
-			template<class... Ts>PLASMA_LAMBDA_CONFIG_CONSTEXPR auto operator()(Ts&&... args)
-				->decltype(true_(std::forward<Ts>(args)...))
+			template<class... Ts>PLASMA_LAMBDA_CONFIG_CONSTEXPR auto operator()(Ts const&... args)
+				->decltype(true_(args...))
 			{
 				return (cond_(args...)) ?
-					true_(std::forward<Ts>(args)...) :
-					false_(std::forward<Ts>(args)...);
+					true_(args...) :
+					false_(args...);
 			}
 
 			PLASMA_LAMBDA_CONFIG_CONSTEXPR if_t(Cond&& c, True&& t, False&& f)

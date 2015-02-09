@@ -15,10 +15,10 @@ namespace plasma
 		{\
 			Type func_;\
 			PLASMA_LAMBDA_CONFIG_CONSTEXPR name(Type const& arg):func_(arg){}\
-			template<class... Ts>PLASMA_LAMBDA_CONFIG_CONSTEXPR auto operator()(Ts&&... args)\
-				->decltype(op func_(std::forward<Ts>(args)...))\
+			template<class... Ts>PLASMA_LAMBDA_CONFIG_CONSTEXPR auto operator()(Ts const&... args)\
+				->decltype(op func_(args...))\
 			{\
-				return op func_(std::forward<Ts>(args)...);\
+				return op func_(args...);\
 			}\
 		};\
 		template<class Type>PLASMA_LAMBDA_CONFIG_CONSTEXPR \

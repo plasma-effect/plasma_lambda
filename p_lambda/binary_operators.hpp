@@ -17,10 +17,10 @@ namespace plasma
 			Rhs rhs_;\
 			PLASMA_LAMBDA_CONFIG_CONSTEXPR name(Lhs const& lhs,Rhs const& rhs)\
 				:lhs_(lhs),rhs_(rhs){}\
-			template<class... Ts>PLASMA_LAMBDA_CONFIG_CONSTEXPR auto operator()(Ts&&... args)\
-				->decltype(lhs_(std::forward<Ts>(args)...) op rhs_(std::forward<Ts>(args)...))\
+			template<class... Ts>PLASMA_LAMBDA_CONFIG_CONSTEXPR auto operator()(Ts const&... args)\
+				->decltype(lhs_(args...) op rhs_(args...))\
 			{\
-				return lhs_(std::forward<Ts>(args)...) op rhs_(std::forward<Ts>(args)...);\
+				return lhs_(args...) op rhs_(args...);\
 			}\
 		};\
 		template<class Lhs,class Rhs>PLASMA_LAMBDA_CONFIG_CONSTEXPR name <Lhs,Rhs> operator op (Lhs const& lhs,Rhs const& rhs)\
